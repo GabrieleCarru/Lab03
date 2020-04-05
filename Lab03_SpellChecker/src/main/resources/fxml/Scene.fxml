@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.FXMLController">
    <top>
       <Label text="Lab03_SpellChecker" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -27,41 +27,41 @@
                         <Insets bottom="7.0" left="7.0" right="15.0" top="7.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox prefWidth="150.0">
+                  <ComboBox fx:id="boxLingua" onAction="#doActivation" prefWidth="150.0">
                      <HBox.margin>
                         <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                      </HBox.margin>
                   </ComboBox>
                </children>
             </HBox>
-            <TextArea prefHeight="200.0" prefWidth="200.0">
+            <TextArea fx:id="txtDaCorreggere" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
                </VBox.margin>
             </TextArea>
-            <Button mnemonicParsing="false" text="Spell Check" textAlignment="JUSTIFY">
+            <Button fx:id="SpellCheckBtn" mnemonicParsing="false" onAction="#doSpellScheck" text="Spell Check" textAlignment="JUSTIFY">
                <VBox.margin>
                   <Insets right="7.0" />
                </VBox.margin>
             </Button>
             <Label text="Wrong words:">
                <VBox.margin>
-                  <Insets right="280.0" top="7.0" />
+                  <Insets right="280.0" />
                </VBox.margin>
             </Label>
-            <TextArea prefHeight="200.0" prefWidth="200.0">
+            <TextArea fx:id="txtCorretto" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
                </VBox.margin>
             </TextArea>
             <HBox alignment="CENTER_RIGHT">
                <children>
-                  <Label text="The text contains " textFill="#d31006">
+                  <Label fx:id="lblErrori" text="Number Error" textFill="#d31006">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button fx:id="clearTxtBtn" mnemonicParsing="false" onAction="#doClearText" text="Clear text">
                      <HBox.margin>
                         <Insets right="7.0" />
                      </HBox.margin>
@@ -75,7 +75,7 @@
       </VBox>
    </center>
    <bottom>
-      <Label text="Spell check completed in" BorderPane.alignment="CENTER_LEFT">
+      <Label fx:id="lblStato" text="Spell check Status" BorderPane.alignment="CENTER_LEFT">
          <padding>
             <Insets right="170.0" />
          </padding>
